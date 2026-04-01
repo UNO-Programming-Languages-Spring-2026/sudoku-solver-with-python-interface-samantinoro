@@ -36,6 +36,25 @@ class Sudoku:
     def from_str(cls, s: str) -> "Sudoku":
         sudoku = {}
         # YOUR CODE HERE
+
+        #print(s)
+
+        new_s = s.split()
+
+        #print(new_s)
+
+        newdict= {}
+
+        for i in range(9):
+            for j in range(9):
+                val = (i*9 +j)
+                if new_s[val].isdigit():
+                    newdict[(i+1,j+1)] = int(new_s[val])
+                else:
+                    pass
+
+        sudoku = newdict
+
         return cls(sudoku)
 
     @classmethod
