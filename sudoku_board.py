@@ -28,7 +28,7 @@ class Sudoku:
 
             s += str(strlist[i]) + " "
 
-        #print(s)
+        s += "\n"
 
         return s
 
