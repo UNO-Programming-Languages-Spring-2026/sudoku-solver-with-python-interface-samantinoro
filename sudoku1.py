@@ -18,6 +18,8 @@ class ClingoApp(clingo.application.Application):
     def print_model(self, model, printer) -> None:
         symbols = sorted(model.symbols(shown=True))
 
+        #basically from slides, except do standard output instead of print
+        #Q1
         sys.stdout.write(" ".join(str(s) for s in symbols) + "\n")
         sys.stdout.flush()
 

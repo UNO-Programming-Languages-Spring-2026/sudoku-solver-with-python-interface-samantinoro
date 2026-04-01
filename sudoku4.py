@@ -22,6 +22,7 @@ class ClingoApp(clingo.application.Application):
         #sys.stdout.write(" ".join(str(s) for s in symbols) + "\n")
         #sys.stdout.flush()
 
+        #uses _str_ to take model and turn it into valid string  to display - q4
         sys.stdout.write(sudoku.__str__(sudoku.from_model(model)))
         sys.stdout.flush()
 

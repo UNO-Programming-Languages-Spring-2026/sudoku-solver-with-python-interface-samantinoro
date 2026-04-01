@@ -8,7 +8,7 @@ class Sudoku:
 
     def __str__(self) -> str:
         s = ""
-        # YOUR CODE HERE
+        # YOUR CODE HERE  - question 3
 
         #print(sorted(self.sudoku.items()))
 
@@ -16,6 +16,10 @@ class Sudoku:
 
         #print(strlist)
 
+        #every 27 is new row of blocks,
+        #every 9 is new row
+        #ever 3 is new col of blocks
+        #ez pz
         for i in range(len(strlist)):
             if i == 0:
                 pass
@@ -35,7 +39,7 @@ class Sudoku:
     @classmethod
     def from_str(cls, s: str) -> "Sudoku":
         sudoku = {}
-        # YOUR CODE HERE
+        # YOUR CODE HERE - quesiton 5
 
         #print(s)
 
@@ -45,6 +49,9 @@ class Sudoku:
 
         newdict= {}
 
+        #*kinda* like the opposite of __str__
+        #takes from string, but excludes all '-'s
+        #maps directly from long-ass string onto dict, 3x3x3 = 81 in sequence
         for i in range(9):
             for j in range(9):
                 val = (i*9 +j)
@@ -60,11 +67,12 @@ class Sudoku:
     @classmethod
     def from_model(cls, model: clingo.solving.Model) -> "Sudoku":
         sudoku = {}
-        # YOUR CODE HERE
+        # YOUR CODE HERE - question 2
 
         #print(model.symbols(shown=True))
 
         #thre3_way_list = [[arg.number for arg in s.arguments] for s in model.symbols(shown=True)]
+        #uses nesting dictionary to turn sudoku placement values into dict coords and keys w/  .number
 
         board = { (s.arguments[0].number, s.arguments[1].number): s.arguments[2].number
         for s in sorted(model.symbols(shown=True))  }
