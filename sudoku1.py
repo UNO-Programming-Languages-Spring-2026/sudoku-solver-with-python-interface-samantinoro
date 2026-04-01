@@ -18,10 +18,9 @@ class ClingoApp(clingo.application.Application):
     def print_model(self, model, printer) -> None:
         symbols = sorted(model.symbols(shown=True))
 
-        print(" ".join(str(s) for s in symbols))
+        sys.stdout.write(" ".join(str(s) for s in symbols) + "\n")
         sys.stdout.flush()
 
-clingo.application.clingo_main(ClingoApp())
 
 if __name__ == "__main__":
     clingo.application.clingo_main(ClingoApp(), sys.argv[1:])
