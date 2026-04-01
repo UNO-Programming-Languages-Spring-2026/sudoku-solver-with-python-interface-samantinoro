@@ -1,5 +1,5 @@
 import sys, clingo
-import sudoku_board
+from sudoku_board import Sudoku as sudoku
 
 
 class ClingoApp(clingo.application.Application):
@@ -22,7 +22,7 @@ class ClingoApp(clingo.application.Application):
         #sys.stdout.write(" ".join(str(s) for s in symbols) + "\n")
         #sys.stdout.flush()
 
-        sys.stdout.write(sudoku_board.Sudoku.__str__(sudoku_board.Sudoku.from_model(model)))
+        sys.stdout.write(sudoku.__str__(sudoku.from_model(model)))
         sys.stdout.flush()
 
 

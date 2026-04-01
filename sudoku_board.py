@@ -64,7 +64,7 @@ class Sudoku:
 
         #print(model.symbols(shown=True))
 
-        #3_way_list = [[arg.number for arg in s.arguments] for s in model.symbols(shown=True)]
+        #thre3_way_list = [[arg.number for arg in s.arguments] for s in model.symbols(shown=True)]
 
         board = { (s.arguments[0].number, s.arguments[1].number): s.arguments[2].number
         for s in sorted(model.symbols(shown=True))  }
